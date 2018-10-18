@@ -1,0 +1,303 @@
+﻿@model WebApplication1.Models.Product
+@{
+    Layout = null;
+}
+@*@{
+
+        IEnumerable<Product> product = ViewData["Product"] as IEnumerable<Product>;
+        IEnumerable<Category> category = ViewData["Category"] as IEnumerable<Category>;
+    }*@
+<!DOCTYPE html>
+<html lang="en">
+
+@Html.Partial("~/Views/Demo/Layout/Head.cshtml")
+<!--Custom-->
+<style type="text/css">
+    .table-responsive {
+        overflow-y: auto;
+        height: 400px;
+    }
+
+    form.form-header.search_bar {
+        margin-left: 325px;
+        - top: -32px;
+        margin-top: -10px;
+        padding-bottom: 20px;
+    }
+
+    .row.form-group.detail-row {
+        border-bottom: 1px solid #d2caca;
+    }
+
+    .manage-button {
+        margin-left: auto;
+    }
+
+    .table-earning tbody tr:nth-child(odd):hover td {
+        background: #80808042;
+    }
+</style>
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        @Html.Partial("~/Views/Demo/Layout/Header_mobile.cshtml")
+        <!-- END HEADER MOBILE-->
+        <!-- MENU SIDEBAR-->
+        @Html.Partial("~/Views/Demo/Layout/Menu_sidebar.cshtml")
+        <!-- END MENU SIDEBAR-->
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            @Html.Partial("~/Views/Demo/Layout/Header_desktop.cshtml")
+            <!-- END HEADER DESKTOP-->
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <!-- SEARCH BAR-->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="search_bar">
+                                    <div container="container">
+                                        <div class="row">
+                                            <div class="col-lg-8">
+                                                <form class="form-header search_bar" action="" method="POST">
+                                                    <input class="au-input au-input--xl" type="text" name="search" placeholder="Nhập tên sản phẩm..." />
+                                                    <button class="au-btn--submit" type="submit">
+                                                        <i class="zmdi zmdi-search"></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END SEARCH BAR-->
+                        <!-- TABLE CONTENT-->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="table-responsive table--no-card m-b-30">
+                                    <table class="table table-borderless table-striped table-earning">
+                                        <thead>
+                                            <tr>
+                                                <th>Mã sản phẩm</th>
+                                                <th>Tên sản phẩm</th>
+                                                <th>Đơn giá</th>
+                                                <th>Loại sản phẩm</th>
+                                                <th>Ngày tạo</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in @ViewBag.Test)
+                                            {
+                                            <tr data-id="@item.product_id.Increment">
+                                                <td>@item.product_id.Increment</td>
+                                                <td>@item.product_name</td>
+                                                <td>@item.product_price</td>
+                                                <td>
+                                                    @foreach (var cate in @item.category)
+                                                    {
+                                                        @cate.category_name
+
+                                                    }
+                                                </td>
+                                                <td>@item.product_id.CreationTime</td>
+                                                </tr>
+                                                <tr data-id="@item.product_id.Increment" style="display:none">
+                                                    <td colspan="5" style="font-size:15px">
+                                                        <div class="detail">
+                                                            <div class="container">
+                                                                <div class="row">
+                                                                    <div class="col-lg-2">
+                                                                        <h5>Hình ảnh</h5>
+                                                                        <img width="150" height="150" src="~/images/icon/avatar-01.jpg" />
+                                                                    </div>
+                                                                    <div class="col-lg-4">
+                                                                        <div class="row form-group detail-row">
+                                                                            <div class="col col-md-4">
+                                                                                <label class=" form-control-label">Mã sản phẩm:</label>
+                                                                            </div>
+                                                                            <div class="col-12 col-md-8">
+                                                                                <p class="form-control-static">@item.product_id.Increment</p>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                        <div class="row form-group detail-row">
+                                                                            <div class="col col-md-4">
+                                                                                <label class=" form-control-label">Tên sản phẩm:</label>
+                                                                            </div>
+                                                                            <div class="col-12 col-md-8">
+                                                                                <p class="form-control-static">@item.product_name</p>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="row form-group detail-row">
+                                                                            <div class="col col-md-4">
+                                                                                <label class=" form-control-label">Đơn giá:</label>
+                                                                            </div>
+                                                                            <div class="col-12 col-md-8">
+                                                                                <p class="form-control-static">@item.product_price</p>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="row form-group detail-row">
+                                                                            <div class="col col-md-4">
+                                                                                <label class=" form-control-label">Loại sản phẩm:</label>
+                                                                            </div>
+                                                                            <div class="col-12 col-md-8">
+                                                                                @foreach (var cate in @item.category)
+                                                                                {
+                                                                                    <p class="form-control-static">@cate.category_name</p>
+                                                                                }
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-lg-5 ml-auto">
+                                                                        <div class="row form-group detail-row">
+                                                                            <div class="col col-md-4">
+                                                                                <label class=" form-control-label">Mô tả:</label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-control-static">
+                                                                            <p class="form-control-static">@item.product_info</p>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="manage-button">
+                                                                        <button type="submit" class="btn btn-success btn-sm">
+                                                                            <i class="fa fa-edit"></i> Cập nhật
+                                                                        </button>
+                                                                        <button type="submit" class="btn btn-danger btn-sm">
+                                                                            <i class="fa fa-remove"></i> Xóa
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- END TABLE CONTENT-->
+                        <!-- ADD FORM-->
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form_action">
+                                    <div container="container">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <strong>Thêm </strong>sản phẩm
+                                                    </div>
+                                                    <form asp-action="Add" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                                        <div class="card-body card-block">
+
+                                                            <div class="row form-group">
+                                                                <div class="col col-md-3">
+                                                                    <label for="text-input" class=" form-control-label">Tên sản phẩm</label>
+                                                                </div>
+                                                                <div class="col-12 col-md-9">
+                                                                    <input type="text" id="text-input" asp-for="product_name" placeholder="Nhập tên sản phẩm" class="form-control">
+                                                                    <small class="form-text text-muted">This is a help text</small>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row form-group">
+                                                                <div class="col col-md-3">
+                                                                    
+                                                                    <label for="text-input" class=" form-control-label">Đơn giá</label>
+                                                                </div>
+                                                                <div class="col-12 col-md-9">
+                                                                    <input type="text" id="text-input" asp-for="product_price" placeholder="Nhập giá sản phẩm" class="form-control">
+                                                                    <small class="form-text text-muted">This is a help text</small>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row form-group">
+                                                                <div class="col col-md-3">
+                                                                    <label for="file-input" class=" form-control-label">Hình ảnh</label>
+                                                                </div>
+                                                                <div class="col-12 col-md-9">
+                                                                    <input type="file" id="file-input" asp-for="product_img" class="form-control-file">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row form-group">
+                                                                <div class="col col-md-3">
+                                                                    <label for="select" class=" form-control-label">Loại sản phẩm</label>
+                                                                </div>
+                                                                <div class="col-12 col-md-9">
+                                                                    <select asp-for="category_id" id="select" class="form-control">
+                                                                        <option selected disabled value="0">Chọn loại sản phẩm</option>
+                                                                        @foreach (var cateItem in @ViewBag.Category)
+                                                                        {
+                                                                            <option value="@cateItem.category_id">@cateItem.category_name</option>
+                                                                        }
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row form-group">
+                                                                <div class="col col-md-3">
+                                                                    <label for="textarea-input" class=" form-control-label">Mô tả</label>
+                                                                </div>
+                                                                <div class="col-12 col-md-9">
+                                                                    <textarea asp-for="product_info" id="textarea-input" rows="9" placeholder="Content..." class="form-control"></textarea>
+                                                                </div>
+                                                            </div>
+
+
+
+
+                                                        </div>
+                                                        <div class="card-footer">
+                                                            <button type="submit" class="btn btn-primary btn-sm">
+                                                                <i class="fa fa-dot-circle-o"></i> Thêm
+                                                            </button>
+                                                            <button type="reset" class="btn btn-danger btn-sm">
+                                                                <i class="fa fa-ban"></i> Nhập lại
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END ADD FORM-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+@Html.Partial("~/Views/Demo/Layout/JS.cshtml")
+
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(function () {
+            $('.table-earning tbody tr:nth-child(odd)').click(function (event) {
+                var id = $(this).attr("data-id");
+                $('.table-earning tbody tr:nth-child(even)[data-id=' + id + ']').toggle();
+            });
+        });
+    });
+</script>
+<!-- end document-->

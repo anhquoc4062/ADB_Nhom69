@@ -1,0 +1,85 @@
+D:\Learning\Advance DB\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.deps.json
+D:\Learning\Advance DB\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.runtimeconfig.json
+D:\Learning\Advance DB\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.runtimeconfig.dev.json
+D:\Learning\Advance DB\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.dll
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.csproj.CoreCompileInputs.cache
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorAssemblyInfo.cache
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorAssemblyInfo.cs
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.AssemblyInfoInputs.cache
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.AssemblyInfo.cs
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.TagHelpers.input.cache
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.TagHelpers.output.cache
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorCoreGenerate.cache
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorTargetAssemblyInfo.cache
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorTargetAssemblyInfo.cs
+D:\Learning\Advance DB\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.pdb
+D:\Learning\Advance DB\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.Views.dll
+D:\Learning\Advance DB\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.Views.pdb
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.Views.pdb
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.dll
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.pdb
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.csproj.CopyComplete
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Demo\Show.g.cshtml.cs
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Demo\Create.g.cshtml.cs
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Demo\Delete.g.cshtml.cs
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Demo\Edit.g.cshtml.cs
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Demo\Layout\Head.g.cshtml.cs
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Demo\Layout\Header_mobile.g.cshtml.cs
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.csprojAssemblyReference.cache
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Demo\Layout\Menu_sidebar.g.cshtml.cs
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Demo\Layout\Header_desktop.g.cshtml.cs
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Demo\Layout\JS.g.cshtml.cs
+D:\Learning\Advance DB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Product\List.g.cshtml.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.deps.json
+D:\Learning\MongoDB\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.runtimeconfig.json
+D:\Learning\MongoDB\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.runtimeconfig.dev.json
+D:\Learning\MongoDB\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.dll
+D:\Learning\MongoDB\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.pdb
+D:\Learning\MongoDB\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.Views.dll
+D:\Learning\MongoDB\WebApplication1\WebApplication1\bin\Debug\netcoreapp2.1\WebApplication1.Views.pdb
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.csprojAssemblyReference.cache
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.csproj.CoreCompileInputs.cache
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorAssemblyInfo.cache
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorAssemblyInfo.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.AssemblyInfoInputs.cache
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.AssemblyInfo.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.TagHelpers.input.cache
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.TagHelpers.output.cache
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorCoreGenerate.cache
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Demo\Create.g.cshtml.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Demo\Delete.g.cshtml.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Demo\Edit.g.cshtml.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Demo\Layout\Head.g.cshtml.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Demo\Layout\Header_desktop.g.cshtml.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Demo\Layout\Header_mobile.g.cshtml.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Demo\Layout\JS.g.cshtml.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Demo\Layout\Menu_sidebar.g.cshtml.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Demo\Show.g.cshtml.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Product\List.g.cshtml.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorTargetAssemblyInfo.cache
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.RazorTargetAssemblyInfo.cs
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.Views.pdb
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.dll
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.pdb
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.csproj.CopyComplete
+D:\Learning\MongoDB\WebApplication1\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Product\Add.g.cshtml.cs

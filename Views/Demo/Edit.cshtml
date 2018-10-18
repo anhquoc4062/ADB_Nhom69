@@ -1,0 +1,43 @@
+﻿@model WebApplication1.Models.Customers
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Customers</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="customer_id" class="control-label"></label>
+                <input asp-for="customer_id" class="form-control" readonly/>
+                <span asp-validation-for="customer_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="customer_name" class="control-label"></label>
+                <input asp-for="customer_name" class="form-control" />
+                <span asp-validation-for="customer_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="customer_address" class="control-label"></label>
+                <input asp-for="customer_address" class="form-control" />
+                <span asp-validation-for="customer_address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Show">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
