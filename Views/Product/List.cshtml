@@ -93,7 +93,7 @@
                                             @foreach (var item in @ViewBag.Test)
                                             {
                                             <tr data-id="@item.product_id.Increment">
-                                                <td>@item.product_id.Increment</td>
+                                                <td>@item.product_id.CreationTime</td>
                                                 <td>@item.product_name</td>
                                                 <td>@item.product_price</td>
                                                 <td>
@@ -216,7 +216,7 @@
                                                             </div>
                                                             <div class="row form-group">
                                                                 <div class="col col-md-3">
-                                                                    
+
                                                                     <label for="text-input" class=" form-control-label">Đơn giá</label>
                                                                 </div>
                                                                 <div class="col-12 col-md-9">
@@ -255,9 +255,6 @@
                                                                     <textarea asp-for="product_info" id="textarea-input" rows="9" placeholder="Content..." class="form-control"></textarea>
                                                                 </div>
                                                             </div>
-
-
-
 
                                                         </div>
                                                         <div class="card-footer">
