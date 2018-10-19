@@ -13320,11 +13320,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Learning\\MongoDB\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "D:\\Learning\\MongoDB\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "D:\\Learning\\MongoDB\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "projectPath": "D:\\Learning\\MongoDB\\WebApplication1\\WebApplication1.csproj",
       "packagesPath": "C:\\Users\\AnhQuoc\\.nuget\\packages\\",
-      "outputPath": "D:\\Learning\\MongoDB\\WebApplication1\\WebApplication1\\obj\\",
+      "outputPath": "D:\\Learning\\MongoDB\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

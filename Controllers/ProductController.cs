@@ -49,9 +49,9 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public IActionResult Add(Product product)
         {
-            mongoDB = getDatabase();
-            mongoDB.GetCollection<Product>("Product").InsertOne(product);
-            return RedirectToAction("List");
+            ViewBag.Name = product.product_name;
+            return View();
+
         }
     }
 }
