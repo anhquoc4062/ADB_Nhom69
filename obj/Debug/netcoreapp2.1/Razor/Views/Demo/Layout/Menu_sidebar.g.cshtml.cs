@@ -55,7 +55,11 @@ using WebApplication1.Models;
             WriteLiteral("<aside class=\"menu-sidebar d-none d-lg-block\">\r\n    <div class=\"logo\">\r\n        <a href=\"#\">\r\n            ");
             EndContext();
             BeginContext(106, 53, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "00b9b66a8059432bbcd66011b6bd7411", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "8bda23b46f4a4b02849c2ad82671c58a", async() => {
+>>>>>>> 046c3c4a028eb5844fcb66560bc7f67d6c1bb5a5
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

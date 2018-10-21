@@ -54,7 +54,11 @@ using WebApplication1.Models;
             WriteLiteral("\r\n\r\n<h2>Show</h2>\r\n\r\n<p>\r\n    ");
             EndContext();
             BeginContext(83, 37, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "71e23d84698042aebe5acd6839fa6563", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "190b5fd5e19349eabed7a44d60736759", async() => {
+>>>>>>> 046c3c4a028eb5844fcb66560bc7f67d6c1bb5a5
                 BeginContext(106, 10, true);
                 WriteLiteral("Create New");
                 EndContext();

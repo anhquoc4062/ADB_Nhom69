@@ -55,7 +55,11 @@ using WebApplication1.Models;
             WriteLiteral("\r\n<header class=\"header-mobile d-block d-lg-none\">\r\n    <div class=\"header-mobile__bar\">\r\n        <div class=\"container-fluid\">\r\n            <div class=\"header-mobile-inner\">\r\n                <a class=\"logo\" href=\"index.html\">\r\n                    ");
             EndContext();
             BeginContext(248, 54, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "66f1c1b576ae49d587d7e731dedaf68b", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "a82611ebf93a4e92a45fd96277fc9333", async() => {
+>>>>>>> 046c3c4a028eb5844fcb66560bc7f67d6c1bb5a5
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
