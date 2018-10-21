@@ -2,6 +2,11 @@
 @{
     Layout = null;
 }
+@*@{
+
+        IEnumerable<Product> product = ViewData["Product"] as IEnumerable<Product>;
+        IEnumerable<Category> category = ViewData["Category"] as IEnumerable<Category>;
+    }*@
 <!DOCTYPE html>
 <html lang="en">
 
@@ -107,7 +112,7 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-2">
                                                                         <h5>Hình ảnh</h5>
-                                                                        <img width="150" height="150" src="~/images/product/@item.product_img" />
+                                                                        <img width="150" height="150" src="~/images/icon/avatar-01.jpg" />
                                                                     </div>
                                                                     <div class="col-lg-4">
                                                                         <div class="row form-group detail-row">
@@ -197,7 +202,7 @@
                                                     <div class="card-header">
                                                         <strong>Thêm </strong>sản phẩm
                                                     </div>
-                                                    <form asp-action="Add" enctype="multipart/form-data" class="form-horizontal">
+                                                    <form asp-action="Add" method="post" enctype="multipart/form-data" class="form-horizontal">
                                                         <div class="card-body card-block">
 
                                                             <div class="row form-group">
@@ -224,7 +229,7 @@
                                                                     <label for="file-input" class=" form-control-label">Hình ảnh</label>
                                                                 </div>
                                                                 <div class="col-12 col-md-9">
-                                                                    <input type="file" id="file-input" class="form-control-file" name="file">
+                                                                    <input type="file" id="file-input" asp-for="product_img" class="form-control-file">
                                                                 </div>
                                                             </div>
 
@@ -233,7 +238,7 @@
                                                                     <label for="select" class=" form-control-label">Loại sản phẩm</label>
                                                                 </div>
                                                                 <div class="col-12 col-md-9">
-                                                                    <select asp-for="category_id_string" id="select" class="form-control">
+                                                                    <select asp-for="category_id" id="select" class="form-control">
                                                                         <option selected disabled value="0">Chọn loại sản phẩm</option>
                                                                         @foreach (var cateItem in @ViewBag.Category)
                                                                         {

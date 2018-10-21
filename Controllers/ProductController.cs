@@ -8,10 +8,6 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using WebApplication1.Models;
 using MongoDB.Driver.Linq;
-using System.Web;
-using Microsoft.AspNetCore.Http;
-using System.IO;
-using System.Net.Http.Headers;
 
 namespace WebApplication1.Controllers
 {
@@ -50,10 +46,10 @@ namespace WebApplication1.Controllers
             //ViewBag.Test = query.ToList();
             return View();
         }
-
         [HttpPost]
-        public ActionResult Add(Product product, IFormFile file)
+        public IActionResult Add(Product product)
         {
+<<<<<<< HEAD
             string path_to_image = "wwwroot/images/product/"+file.FileName;
             using (var stream = new FileStream(path_to_image, FileMode.Create))
             {
@@ -66,9 +62,10 @@ namespace WebApplication1.Controllers
             mongoDB = getDatabase();
             //Insert to Product collection
             mongoDB.GetCollection<Product>("Product").InsertOne(product);
+=======
+            ViewBag.Name = product.product_name;
+>>>>>>> parent of 046c3c4... abc
             return View();
-
-            //return RedirectToAction("List");
 
         }
     }

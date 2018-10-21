@@ -12,27 +12,25 @@ namespace WebApplication1.Models
     {
         [BsonId]
         [DisplayName("Mã sản phẩm")]
-        public ObjectId product_id { get; set; }
+        public ObjectId product_id;
         [BsonElement]
         [DisplayName("Tên sản phẩm")]
-        public string product_name { get; set; }
+        public string product_name;
         [BsonElement]
         [DisplayName("Đơn giá")]
-        public int product_price { get; set; }
+        public int product_price;
         [BsonElement]
         [DisplayName("Mã loại")]
-        public ObjectId category_id { get; set; }
+        public ObjectId category_id;
         [BsonElement]
         [DisplayName("Hình ảnh")]
-        public string product_img { get; set; }
+        public string product_img;
         [BsonElement]
         [DisplayName("Mô tả")]
-        public string product_info { get; set; }
+        public string product_info;
         [BsonElement]
         [DisplayName("Ngày tạo")]
-        public string product_date { get; set; }
-        
-        public string category_id_string { get; set; }
+        public string product_date;
 
     }
 }
