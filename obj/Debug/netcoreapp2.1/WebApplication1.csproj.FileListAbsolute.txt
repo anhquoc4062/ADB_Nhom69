@@ -169,3 +169,4 @@ D:\GithubSCM\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.Views.pdb
 D:\GithubSCM\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.dll
 D:\GithubSCM\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.pdb
 D:\GithubSCM\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.csproj.CopyComplete
+D:\GithubSCM\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Category\Index.g.cshtml.cs

@@ -1,0 +1,52 @@
+﻿@model WebApplication1.Models.Category
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+<form asp-action="Create" method="post">
+  Tên loại nè:<br>
+  <input type="text" asp-for="category_name">
+  <br><br>
+  <input type="submit" value="Submit">
+</form> 
+    
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in @ViewBag.test)
+        {
+            <tr>
+                <td>@item.category_id</td>
+                <td>@item.category_name</td>
+            </tr>
+            <tr>
+                <td>
+                    <form asp-action="Delete">
+                        <input type="text" hidden value="@item.category_id" name="category_id_string"/>
+                        <input type="submit" value="Delete" class="btn btn-default" /> |
+                        @*<input type="submit" value="Edit" class="btn btn-danger" /> 
+                        <input type="submit" value="Đi tèo" class="btn btn-success" />*@
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</body>
+</html>
