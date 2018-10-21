@@ -1,16 +1,91 @@
-﻿
-@{
-    Layout = null;
-}
+﻿@*<tr data-id="@item.product_id.Increment">
+    <td>@item.product_id.Increment</td>
+    <td>@item.product_name</td>
+    <td>@item.product_price</td>
+    <td>
+        @foreach (var cate in @item.category)
+        {
+            @cate.category_name
 
-<!DOCTYPE html>
+        }
+    </td>
+    <td>@item.product_id.CreationTime</td>
+</tr>
+<tr data-id="@item.product_id.Increment" style="display:none">
+    <td colspan="5" style="font-size:15px">
+        <div class="detail">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Add</title>
-</head>
-<body>
-    <h1>@ViewBag.Name</h1>
-</body>
-</html>
+                        <img width="150" height="150" src="~/images/product/@item.product_img" />
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="row form-group detail-row">
+                            <div class="col col-md-4">
+                                <label class=" form-control-label">Mã sản phẩm:</label>
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <p class="form-control-static">@item.product_id.Increment</p>
+                            </div>
+
+                        </div>
+
+                        <div class="row form-group detail-row">
+                            <div class="col col-md-4">
+                                <label class=" form-control-label">Tên sản phẩm:</label>
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <p class="form-control-static">@item.product_name</p>
+                            </div>
+                        </div>
+
+                        <div class="row form-group detail-row">
+                            <div class="col col-md-4">
+                                <label class=" form-control-label">Đơn giá:</label>
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <p class="form-control-static">@item.product_price</p>
+                            </div>
+                        </div>
+
+                        <div class="row form-group detail-row">
+                            <div class="col col-md-4">
+                                <label class=" form-control-label">Loại sản phẩm:</label>
+                            </div>
+                            <div class="col-12 col-md-8">
+                                @foreach (var cate in @item.category)
+                                {
+                                    <p class="form-control-static">@cate.category_name</p>
+                                }
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-5 ml-auto">
+                        <div class="row form-group detail-row">
+                            <div class="col col-md-4">
+                                <label class=" form-control-label">Mô tả:</label>
+                            </div>
+                        </div>
+                        <div class="form-control-static">
+                            <p class="form-control-static">@item.product_info</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="manage-button">
+                        <button type="submit" class="btn btn-success btn-sm" onclick="window.location.href='/Product/List?product_id_string=@item.product_id'">
+                            <i class="fa fa-edit"></i> Cập nhật
+                        </button>
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="window.location.href='/Product/Delete?product_id_string=@item.product_id'">
+                            <i class="fa fa-remove"></i> Xóa
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </td>
+
+</tr>*@

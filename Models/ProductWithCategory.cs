@@ -31,7 +31,7 @@ namespace WebApplication1.Models
         public string product_info;
         [BsonElement]
         [DisplayName("Ngày tạo")]
-        public string product_date;
+        public BsonDateTimeOptionsAttribute product_date;
         public IEnumerable<Category> category;
     }
 }

@@ -20,6 +20,5 @@ namespace WebApplication1.Models
         [BsonElement]
         public string customer_address { get; set; }
 
-
     }
 }

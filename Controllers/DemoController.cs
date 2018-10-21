@@ -24,7 +24,9 @@ namespace WebApplication1.Controllers
         public IActionResult Show()
         {
             mongoDatabase = GetMongoDatabase();
-            var result = mongoDatabase.GetCollection<Category>("Category").Find(FilterDefinition<Category>.Empty).ToList();
+            var result = mongoDatabase.GetCollection<Category>("Category")
+                .Find(FilterDefinition<Category>.Empty)
+                .ToList();
             return View(result);
         }
 
@@ -37,7 +39,8 @@ namespace WebApplication1.Controllers
         public IActionResult Create(Customers customer)
         {
             mongoDatabase = GetMongoDatabase();
-            mongoDatabase.GetCollection<Customers>("Customers").InsertOne(customer);
+            mongoDatabase.GetCollection<Customers>("Customers")
+                .InsertOne(customer);
             return RedirectToAction("Show");
         }
         [HttpGet]
@@ -49,7 +52,9 @@ namespace WebApplication1.Controllers
             }
             //get database connection
             mongoDatabase = GetMongoDatabase();
-            Customers customer = mongoDatabase.GetCollection<Customers>("Customers").Find<Customers>(key => key.customer_id == id).FirstOrDefault();
+            Customers customer = mongoDatabase.GetCollection<Customers>("Customers")
+                .Find<Customers>(key => key.customer_id == id)
+                .FirstOrDefault();
             if(customer == null)
             {
                 return NotFound();
@@ -60,14 +65,17 @@ namespace WebApplication1.Controllers
         public IActionResult Delete(Customers customers)
         {
             mongoDatabase = GetMongoDatabase();
-            mongoDatabase.GetCollection<Customers>("Customers").DeleteOne<Customers>(key => key.customer_id == customers.customer_id);
+            mongoDatabase.GetCollection<Customers>("Customers")
+                .DeleteOne<Customers>(key => key.customer_id == customers.customer_id);
             return RedirectToAction("Show");
         }
         [HttpGet]
         public IActionResult Edit(int id)
         {
             mongoDatabase = GetMongoDatabase();
-            Customers customer = mongoDatabase.GetCollection<Customers>("Customers").Find<Customers>(key => key.customer_id == id).FirstOrDefault();
+            Customers customer = mongoDatabase.GetCollection<Customers>("Customers")
+                .Find<Customers>(key => key.customer_id == id)
+                .FirstOrDefault();
             return View(customer);
         }
         [HttpPost]
@@ -82,5 +90,7 @@ namespace WebApplication1.Controllers
             mongoDatabase.GetCollection<Customers>("Customers").UpdateOne(condition, update);
             return RedirectToAction("Show");
         }
+
+
     }
 }
