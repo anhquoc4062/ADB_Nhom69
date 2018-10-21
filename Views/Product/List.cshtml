@@ -238,7 +238,7 @@
                                                                     <label for="select" class=" form-control-label">Loại sản phẩm</label>
                                                                 </div>
                                                                 <div class="col-12 col-md-9">
-                                                                    <select asp-for="category_id" id="select" class="form-control">
+                                                                    <select name="category_id_string" id="select" class="form-control">
                                                                         <option selected disabled value="0">Chọn loại sản phẩm</option>
                                                                         @foreach (var cateItem in @ViewBag.Category)
                                                                         {
