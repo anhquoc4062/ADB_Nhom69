@@ -217,3 +217,4 @@ D:\Controller\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.pdb
 D:\Controller\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.csproj.CopyComplete
 >>>>>>> 046c3c4a028eb5844fcb66560bc7f67d6c1bb5a5
 D:\Learning\MongoDB\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Category\Index.g.cshtml.cs
+>>>>>>> parent of 69caeea... Thanh

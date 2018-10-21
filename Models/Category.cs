@@ -10,8 +10,8 @@ namespace WebApplication1.Models
     public class Category
     {
         [BsonId]
-        public ObjectId category_id { get; set; }
+        public ObjectId category_id;
         [BsonElement]
-        public string category_name { get; set; }
+        public string category_name;
     }
 }
