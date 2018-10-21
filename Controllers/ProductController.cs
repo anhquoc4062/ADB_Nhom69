@@ -64,6 +64,7 @@ namespace WebApplication1.Controllers
             product.product_img = file.FileName;
             //ViewBag.category = product.category_id;
             mongoDB = getDatabase();
+            //Insert to Product collection
             mongoDB.GetCollection<Product>("Product").InsertOne(product);
             return View();
 
