@@ -63,7 +63,7 @@ namespace WebApplication1.Controllers
                             {
                                 product_name = product.product_name,
                                 product_id = product.product_id,
-                                product_date = product.product_id.CreationTime,
+                                //product_date = product.product_id.CreationTime,
                                 product_img = product.product_img,
                                 product_info = product.product_info,
                                 product_price = product.product_price,
@@ -95,6 +95,7 @@ namespace WebApplication1.Controllers
             mongoDB.GetCollection<Product>("Product")
                 .InsertOne(product);
             return RedirectToAction("List");
+            
         }
 
         [HttpGet]
@@ -141,22 +142,74 @@ namespace WebApplication1.Controllers
         public IActionResult Search(string key)
         {
             mongoDB = getDatabase();
-            List<ProductWithCategory> list_data = (from product in mongoDB.GetCollection<Product>("Product").AsQueryable()
-                                       join cate in mongoDB.GetCollection<Category>("Category").AsQueryable() on product.category_id equals cate.category_id
-                                       into joiningCategory
-                                       where product.product_name.Contains(key)
-                                       select new ProductWithCategory
-                                       {
-                                           product_name = product.product_name,
-                                           product_id = product.product_id,
-                                           product_date = product.product_id.CreationTime,
-                                           product_img = product.product_img,
-                                           product_info = product.product_info,
-                                           product_price = product.product_price,
-                                           category = joiningCategory
-                                       }).ToList();
-            //list_data.Add("Increment" => )
-            return Json(list_data);
+            key = key.ToLower();
+            List<ProductWithCategory> list_data = new List<ProductWithCategory>();
+            if(key == "") {
+                list_data = (from product in mongoDB.GetCollection<Product>("Product").AsQueryable()
+                                                       join cate in mongoDB.GetCollection<Category>("Category").AsQueryable() on product.category_id equals cate.category_id
+                                                       into joiningCategory 
+                                                       select new ProductWithCategory
+                                                       {
+                                                           product_name = product.product_name,
+                                                           product_id = product.product_id,
+                                                           product_date = "",
+                                                           product_img = product.product_img,
+                                                           product_info = product.product_info,
+                                                           product_price = product.product_price,
+                                                           category = joiningCategory
+                                                       }).ToList();
+
+            }
+            else
+            {
+                list_data = (from product in mongoDB.GetCollection<Product>("Product").AsQueryable()
+                                                       join cate in mongoDB.GetCollection<Category>("Category").AsQueryable() on product.category_id equals cate.category_id
+                                                       into joiningCategory
+                                                       where product.product_name.ToLower().Contains(key)
+                                                       select new ProductWithCategory
+                                                       {
+                                                           product_name = product.product_name,
+                                                           product_id = product.product_id,
+                                                           product_date = "",
+                                                           product_img = product.product_img,
+                                                           product_info = product.product_info,
+                                                           product_price = product.product_price,
+                                                           category = joiningCategory
+                                                       }).ToList();
+            }
+            var htmlString = "";
+            foreach (var item in list_data)
+            {
+                htmlString += "<tr data-id=" + item.product_id.Increment + ">";
+                htmlString += "<td>" + item.product_id.Increment + "</td>";
+                htmlString += "<td>" + item.product_name + "</td>";
+                htmlString += "<td>" + string.Format("{0:N0}", item.product_price) + " đ</td>";
+                htmlString += "<td>" + item.category.First().category_name + "</td>";
+                htmlString += "<td>" + item.product_id.CreationTime + "</td></tr>";
+                htmlString += "<tr data-id='" + item.product_id.Increment + "' style='display:none'>";
+                htmlString += "<td colspan='5' style='font-size: 15px'><div class='detail'><div class='container'><div class='row'>";
+                htmlString += "<div class='col-lg-2'><img width='150' height='150' src=../wwwroot/images/product/" + item.product_img + "' /></div>";
+                htmlString += "<div class='col-lg-4'><div class='row form-group detail-row'><div class='col col-md-4'>";
+                htmlString += "<label class=' form-control-label'>Mã sản phẩm:</label></div><div class='col-12 col-md-8'>";
+                htmlString += "<p class='form-control-static'>" + item.product_id.Increment + "</p></div></div>";
+                htmlString += "<div class='row form-group detail-row'><div class='col col-md-4'>";
+                htmlString += "<label class='form-control-label'>Tên sản phẩm:</label></div>";
+                htmlString += "<div class='col-12 col-md-8'><p class='form-control-static'>" + item.product_name + "</p></div></div>";
+                htmlString += "<div class='row form-group detail-row'><div class='col col-md-4'>";
+                htmlString += "<label class='form-control-label'>Đơn giá:</label></div><div class='col-12 col-md-8'>";
+                htmlString += "<p class='form-control-static'>" + string.Format("{0:N0}", item.product_price) + " đ</p></div></div>";
+                htmlString += "<div class='row form-group detail-row'><div class='col col-md-4'>";
+                htmlString += "<label class='form-control-label'>Loại sản phẩm:</label></div><div class='col-12 col-md-8'>";
+                htmlString += "<p class='form-control-static'>" + item.category.First().category_name + "</p></div></div></div>";
+                htmlString += "<div class='col-lg-5 ml-auto'><div class='row form-group detail-row'><div class='col col-md-4'>";
+                htmlString += "<label class='form-control-label'>Mô tả:</label></div></div><div class='form-control-static'>";
+                htmlString += "<p class='form-control-static'>" + item.product_info + "</p></div></div>";
+                htmlString += "</div><div class='row'><div class='manage-button'>";
+                htmlString += "<button type='submit' class='btn btn-success btn-sm' onclick=window.location.href='/Product/List?product_id_string="+ item.product_id + "'>";
+                htmlString += "<i class='fa fa-edit'></i> Cập nhật</button><button type='submit' class='btn btn-danger btn-sm' onclick=window.location.href='/Product/Delete?product_id_string=" + item.product_id + "'>";
+                htmlString += "<i class='fa fa-remove'></i> Xóa</button></div></div></div></div></td></tr>";
+            }
+            return Json(htmlString);
         }
     }
 }

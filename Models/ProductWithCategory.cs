@@ -4,6 +4,7 @@ using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -19,6 +20,7 @@ namespace WebApplication1.Models
         public string product_name;
         [BsonElement]
         [DisplayName("Đơn giá")]
+        [DisplayFormat(DataFormatString = "{0:N0}")]
         public int product_price;
         [BsonElement]
         [DisplayName("Mã loại")]
@@ -31,7 +33,7 @@ namespace WebApplication1.Models
         public string product_info;
         [BsonElement]
         [DisplayName("Ngày tạo")]
-        public BsonDateTimeOptionsAttribute product_date;
+        public string product_date;
         public IEnumerable<Category> category;
     }
 }

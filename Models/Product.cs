@@ -3,6 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -17,6 +18,7 @@ namespace WebApplication1.Models
         [DisplayName("Tên sản phẩm")]
         public string product_name { get; set; }
         [BsonElement]
+        [DisplayFormat(DataFormatString = "{0:N0}")]
         [DisplayName("Đơn giá")]
         public int product_price { get; set; }
         [BsonElement]
@@ -31,7 +33,6 @@ namespace WebApplication1.Models
         [BsonElement]
         [DisplayName("Ngày tạo")]
         public string product_date { get; set; }
-
 
     }
 }
