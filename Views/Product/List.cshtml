@@ -114,7 +114,7 @@
                                             <div class="col-lg-8">
                                                 <form class="form-header search_bar" action="" method="POST">
                                                     <input class="au-input au-input--xl" type="text" name="search" id="search_value" placeholder="Nhập tên sản phẩm..." />
-                                                    <button class="au-btn--submit" id="search_button" type="button">
+                                                    <button class="au-btn--submit" id="search_button" type="submit">
                                                         <i class="zmdi zmdi-search"></i>
                                                     </button>
                                                 </form>
@@ -309,10 +309,6 @@
                                                                                 reader.readAsDataURL(input.files[0]);
                                                                             }
                                                                         }
-
-                                                                        $("#image_input").change(function () {
-                                                                            readURL(this);
-                                                                        });
                                                                     </script>
                                                                 </div>
 
@@ -403,35 +399,43 @@
                                                                             </tr>
                                                                         </thead>
                                                                         <tbody>
-                                                                           
-                                                                           @foreach (var cate in ViewBag.Category)
+
+                                                                            @foreach (var cate in ViewBag.Category)
                                                                             {
-                                                                            <tr style="font-size: 15px">
-                                                                                <td>
-                                                                                    <span>@cate.category_id.Increment</span>
-                                                                                    
-                                                                                </td>
-                                                                                <td>
-                                                                                    <span style="display" data-id="@cate.category_id">
-                                                                                        @cate.category_name
-                                                                                    </span>
-                                                                                    <div class="edit_ajax input-group" id="edit_ajax" style="display: none" data-id="@cate.category_id">
-                                                                                        <input type="text" class="form-control" value="@cate.category_name" />
-                                                                                        <div class="input-group-btn">
-                                                                                            <button type="submit" class="btn btn-primary" style="background-color: #487eb0; border:none; font-size: 15px">
-                                                                                                <i class="zmdi zmdi-check"></i>
-                                                                                            </button>
-                                                                                        </div>
-                                                                                    </div>
-</td>
-                                                                                <td style="font-size: 20px">
-                                                                                    <a href="#" style="cursor: point; color: #3498db" id="edit_category" data-id="@cate.category_id"><i class="zmdi zmdi-edit"></i></a>
-                                                                                    <a href="../Category/Delete?category_id=@cate.category_id" style="cursor: point; color: #e74c3c"><i class="zmdi zmdi-delete"></i></a>
-                                                                                </td>
-                                                                            </tr>
+                                                                                <tr style="font-size: 15px">
+                                                                                    <td>
+                                                                                        <span>@cate.category_id.Increment</span>
+
+                                                                                    </td>
+                                                                                    <td width="416" height="94">
+                                                                                        <span style="" data-id="@cate.category_id">
+                                                                                            @cate.category_name
+                                                                                        </span>
+                                                                                        <form action="../Category/Update">
+                                                                                            <div class="edit_ajax input-group" id="edit_ajax" style="display: none" data-id="@cate.category_id">
+                                                                                                <input hidden class="form-control" value="@cate.category_id" name="category_id"/>
+                                                                                                <input type="text" class="form-control" value="@cate.category_name" name="category_name"/>
+                                                                                                <div class="input-group-btn">
+                                                                                                    <button type="submit" class="btn btn-primary" style="background-color: #487eb0; border:none; font-size: 15px">
+                                                                                                        <i class="zmdi zmdi-check"></i>
+                                                                                                    </button>
+                                                                                                </div>
+
+                                                                                            </div>
+                                                                                        </form>                                                                                    </td>
+                                                                                    <td style="font-size: 20px">
+                                                                                        <a href="#" style="cursor: point; color: #3498db" id="edit_category" data-id="@cate.category_id"><i class="zmdi zmdi-edit"></i></a>
+                                                                                        <a href="../Category/Delete?category_id=@cate.category_id" style="cursor: point; color: #e74c3c"><i class="zmdi zmdi-delete"></i></a>
+                                                                                    </td>
+                                                                                </tr>
                                                                             }
+
                                                                         </tbody>
+                                                                        <tfoot>
+
+                                                                        </tfoot>
                                                                     </table>
+
                                                                 </div>
                                                             </div>
                                                             
@@ -440,31 +444,7 @@
                                                     </div>
 
                                                 </div>
-                                                @*<div class="container">
-                                                    <div class="row">
-                                                        <!-- FORM CATE -->
-                                                        <div class="col-lg-12">
-                                                            <div class="card">
-                                                                <div class="card-header">
-                                                                    <strong>Thêm</strong> Loại Sản Phẩm
-                                                                </div>
-                                                                <div class="card-body card-block">
-                                                                    <div class="has-success form-group">
-                                                                        <label for="inputIsValid" class=" form-control-label">Tên Loại</label>
-                                                                        <div class="input-group">
-                                                                            <input type="email" id="input2-group2" name="input2-group2" placeholder="Nhập tên loại" class="form-control">
-                                                                            <div class="input-group-btn">
-                                                                                <button class="btn btn-primary">Thêm</button>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- END FORM CATE -->
-                                                    </div>
-
-                                                </div>*@
+            
 
                                             </div>
                                         </div>
@@ -490,18 +470,29 @@
     $(document).ready(function () {
         $(function () {
 
-            $("#search_button").click(function (event) {
+            $(document).on("click", "#search_button", function (event) {
                 event.preventDefault();
+                console.log("da clicked");
+                var $key = null;
+                if ($("#search_value").val() == "") {
+                    $key = "#%$null$%#";
+                }
+                else {
+                    $key = $("#search_value").val();
+                }
                 $.ajax({
-                    url: "/Product/Search?key=" + $("#search_value").val(),
+                    url: "/Product/Search/",
                     dataType: "JSON",
-                    method: "GET",
-                    data: {},
+                    type: "POST",
+                    data: {key: $key},
+                    //contentType: "application/json",
                     success: function (data) {
-
                         $("#table_body tr").remove();
                         $("#table_body").append(data);
                     },
+                    error: function() {
+                        alert("Lỗi tìm kiếm");
+                    }
 
                 });
             });
@@ -516,10 +507,14 @@
                 e.preventDefault();
                 console.log("da cliecked");
                 var id = $(this).attr("data-id");
-                $('span[data-id=' + id + ']').css('display', 'none');;
+                $('span[data-id=' + id + ']').toggle();
                 $('.edit_ajax[data-id=' + id + ']').toggle();
+                var on = $('.edit_ajax[data-id=' + id + ']').is(':visible');
+                $(this).html(on ? '<i class="zmdi zmdi-close"></i>' : '<i class="zmdi zmdi-edit"></i>');
             });
+            
         });
+        
 
     });
 </script>

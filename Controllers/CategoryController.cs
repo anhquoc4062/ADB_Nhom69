@@ -17,6 +17,7 @@ namespace WebApplication1.Controllers
             var mongoClient = new MongoClient("mongodb://localhost:27017");
             return mongoClient.GetDatabase("CoffeeShopDB");
         }
+
         public IActionResult Index()
         {
             return View();
@@ -39,6 +40,19 @@ namespace WebApplication1.Controllers
             ObjectId key_id = new ObjectId(category_id); 
             mongoDB.GetCollection<Category>("Category").DeleteOne(self => self.category_id == key_id);
             return RedirectToAction("List", "Product", new { area = "" });
+        }
+
+        public IActionResult Update(string category_id, string category_name)
+        {
+            mongoDB = getDatabase();
+            
+            ObjectId key_id = new ObjectId(category_id);
+            var where = Builders<Category>.Filter.Eq("category_id", key_id);
+            var update = Builders<Category>.Update
+                .Set("category_name", category_name);
+
+            mongoDB.GetCollection<Category>("Category").UpdateOne(where, update);
+            return RedirectToAction("List", "Product");
         }
 
     }

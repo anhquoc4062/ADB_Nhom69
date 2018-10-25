@@ -85,3 +85,4 @@ D:\Learning\AdvanceDB\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.Ra
 D:\Learning\AdvanceDB\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.Views.pdb
 D:\Learning\AdvanceDB\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.csproj.CopyComplete
 D:\Learning\AdvanceDB\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Category\Create.g.cshtml.cs
+D:\Learning\AdvanceDB\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Product\Test.g.cshtml.cs

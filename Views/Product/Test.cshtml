@@ -1,0 +1,19 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Test</title>
+</head>
+<body>
+    @foreach (var item in @ViewBag.Test)
+    {
+        <h1>@item.category_id.getCategoryById()</h1>
+    }
+</body>
+</html>

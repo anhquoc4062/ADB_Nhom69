@@ -24,8 +24,16 @@ namespace WebApplication1.Controllers
             var mongoClient = new MongoClient("mongodb://localhost:27017");
             return mongoClient.GetDatabase("CoffeeShopDB");
         }
+
         public IActionResult Index()
         {
+            return View();
+        }
+     
+        public IActionResult Test()
+        {
+            mongoDB = getDatabase();
+            ViewBag.Test = mongoDB.GetCollection<Product>("Product").Find(FilterDefinition<Product>.Empty).ToList();
             return View();
         }
         [HttpGet]
@@ -53,23 +61,26 @@ namespace WebApplication1.Controllers
                               select product;
             }
      
-            ViewBag.Category = from e in mongoDB.GetCollection<Category>("Category").AsQueryable()
-                               select e;
+            ViewBag.Category = from cate in mongoDB.GetCollection<Category>("Category").AsQueryable()
+                               select cate;
 
             ViewBag.ProductWithCategory = (from product in mongoDB.GetCollection<Product>("Product").AsQueryable()
-                            join cate in mongoDB.GetCollection<Category>("Category").AsQueryable() on product.category_id equals cate.category_id
-                            into joiningCategory
-                            select new ProductWithCategory
+                           join cate in mongoDB.GetCollection<Category>("Category").AsQueryable() on product.category_id equals cate.category_id
+                           into joiningCategory
+                           select new ProductWithCategory
                             {
                                 product_name = product.product_name,
                                 product_id = product.product_id,
-                                //product_date = product.product_id.CreationTime,
+                               //product_date = product.product_id.CreationTime,
                                 product_img = product.product_img,
                                 product_info = product.product_info,
                                 product_price = product.product_price,
                                 category = joiningCategory
                             }).ToList();
-  
+            ViewBag.Product = from product in mongoDB.GetCollection<Product>("Product").AsQueryable()
+                              select product;
+
+
             return View();
         }
 
@@ -139,45 +150,47 @@ namespace WebApplication1.Controllers
             mongoDB.GetCollection<Product>("Product").UpdateOne(where, update);
             return RedirectToAction("List");
         }
+        [HttpPost]
         public IActionResult Search(string key)
         {
             mongoDB = getDatabase();
-            key = key.ToLower();
             List<ProductWithCategory> list_data = new List<ProductWithCategory>();
-            if(key == "") {
+            if(key == "#%$null$%#") {
                 list_data = (from product in mongoDB.GetCollection<Product>("Product").AsQueryable()
-                                                       join cate in mongoDB.GetCollection<Category>("Category").AsQueryable() on product.category_id equals cate.category_id
-                                                       into joiningCategory 
-                                                       select new ProductWithCategory
-                                                       {
-                                                           product_name = product.product_name,
-                                                           product_id = product.product_id,
-                                                           product_date = "",
-                                                           product_img = product.product_img,
-                                                           product_info = product.product_info,
-                                                           product_price = product.product_price,
-                                                           category = joiningCategory
-                                                       }).ToList();
+                             join cate in mongoDB.GetCollection<Category>("Category").AsQueryable() on product.category_id equals cate.category_id
+                             into joiningCategory
+                             select new ProductWithCategory
+                             {
+                                 product_name = product.product_name,
+                                 product_id = product.product_id,
+                                 product_date = "",
+                                 product_img = product.product_img,
+                                 product_info = product.product_info,
+                                 product_price = product.product_price,
+                                 category = joiningCategory
+                             }).ToList();
 
             }
             else
             {
+                key = key.ToLower();
                 list_data = (from product in mongoDB.GetCollection<Product>("Product").AsQueryable()
-                                                       join cate in mongoDB.GetCollection<Category>("Category").AsQueryable() on product.category_id equals cate.category_id
-                                                       into joiningCategory
-                                                       where product.product_name.ToLower().Contains(key)
-                                                       select new ProductWithCategory
-                                                       {
-                                                           product_name = product.product_name,
-                                                           product_id = product.product_id,
-                                                           product_date = "",
-                                                           product_img = product.product_img,
-                                                           product_info = product.product_info,
-                                                           product_price = product.product_price,
-                                                           category = joiningCategory
-                                                       }).ToList();
+                            join cate in mongoDB.GetCollection<Category>("Category").AsQueryable() on product.category_id equals cate.category_id
+                            into joiningCategory
+                            where product.product_name.ToLower().Contains(key)
+                            select new ProductWithCategory
+                            {
+                                product_name = product.product_name,
+                                product_id = product.product_id,
+                                product_date = "",
+                                product_img = product.product_img,
+                                product_info = product.product_info,
+                                product_price = product.product_price,
+                                category = joiningCategory
+                            }).ToList();
             }
-            var htmlString = "";
+            string htmlString = "";
+            int count = 0;
             foreach (var item in list_data)
             {
                 htmlString += "<tr data-id=" + item.product_id.Increment + ">";
@@ -188,7 +201,7 @@ namespace WebApplication1.Controllers
                 htmlString += "<td>" + item.product_id.CreationTime + "</td></tr>";
                 htmlString += "<tr data-id='" + item.product_id.Increment + "' style='display:none'>";
                 htmlString += "<td colspan='5' style='font-size: 15px'><div class='detail'><div class='container'><div class='row'>";
-                htmlString += "<div class='col-lg-2'><img width='150' height='150' src=../wwwroot/images/product/" + item.product_img + "' /></div>";
+                htmlString += "<div class='col-lg-2'><img width='150' height='150' src=/images/product/" + item.product_img + " /></div>";
                 htmlString += "<div class='col-lg-4'><div class='row form-group detail-row'><div class='col col-md-4'>";
                 htmlString += "<label class=' form-control-label'>Mã sản phẩm:</label></div><div class='col-12 col-md-8'>";
                 htmlString += "<p class='form-control-static'>" + item.product_id.Increment + "</p></div></div>";
@@ -208,7 +221,13 @@ namespace WebApplication1.Controllers
                 htmlString += "<button type='submit' class='btn btn-success btn-sm' onclick=window.location.href='/Product/List?product_id_string="+ item.product_id + "'>";
                 htmlString += "<i class='fa fa-edit'></i> Cập nhật</button><button type='submit' class='btn btn-danger btn-sm' onclick=window.location.href='/Product/Delete?product_id_string=" + item.product_id + "'>";
                 htmlString += "<i class='fa fa-remove'></i> Xóa</button></div></div></div></div></td></tr>";
+                count++;
             }
+            if (count == 0)
+            {
+                htmlString = "<tr><td colspan=5 style=text-align:center; font-size:30px>Không tìm thấy sản phẩm</td></tr>";
+            }
+            //htmlString = key;
             return Json(htmlString);
         }
     }
