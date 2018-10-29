@@ -146,12 +146,7 @@
                                                     <td>@item.product_id.Increment</td>
                                                     <td>@item.product_name</td>
                                                     <td>@string.Format("{0:N0}", @item.product_price) đ</td>
-                                                    <td>
-                                                        @foreach (var cate in @item.category)
-                                                        {
-                                                            @cate.category_name
-
-                                                        }
+                                                    <td>@item.category_name
                                                     </td>
                                                     <td>@item.product_id.CreationTime</td>
                                                 </tr>
@@ -198,10 +193,7 @@
                                                                                 <label class=" form-control-label">Loại sản phẩm:</label>
                                                                             </div>
                                                                             <div class="col-12 col-md-8">
-                                                                                @foreach (var cate in @item.category)
-                                                                                {
-                                                                                    <p class="form-control-static">@cate.category_name</p>
-                                                                                }
+                                                                                <p class="form-control-static">@item.category_name</p>
                                                                             </div>
                                                                         </div>
 

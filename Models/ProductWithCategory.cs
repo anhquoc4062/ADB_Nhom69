@@ -12,6 +12,7 @@ namespace WebApplication1.Models
 {
     public class ProductWithCategory:Product
     {
-        public IEnumerable<Category> category;
+        public IEnumerable<Category> category { get; set; }
+        public string category_name => category.First().category_name;
     }
 }

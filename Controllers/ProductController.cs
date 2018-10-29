@@ -213,7 +213,7 @@ namespace WebApplication1.Controllers
                 htmlString += "<p class='form-control-static'>" + string.Format("{0:N0}", item.product_price) + " đ</p></div></div>";
                 htmlString += "<div class='row form-group detail-row'><div class='col col-md-4'>";
                 htmlString += "<label class='form-control-label'>Loại sản phẩm:</label></div><div class='col-12 col-md-8'>";
-                htmlString += "<p class='form-control-static'>" + item.category.First().category_name + "</p></div></div></div>";
+                htmlString += "<p class='form-control-static'>" + item.category_name + "</p></div></div></div>";
                 htmlString += "<div class='col-lg-5 ml-auto'><div class='row form-group detail-row'><div class='col col-md-4'>";
                 htmlString += "<label class='form-control-label'>Mô tả:</label></div></div><div class='form-control-static'>";
                 htmlString += "<p class='form-control-static'>" + item.product_info + "</p></div></div>";

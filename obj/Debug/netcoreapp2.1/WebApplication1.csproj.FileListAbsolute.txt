@@ -86,3 +86,5 @@ D:\Learning\AdvanceDB\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.Vi
 D:\Learning\AdvanceDB\WebApplication1\obj\Debug\netcoreapp2.1\WebApplication1.csproj.CopyComplete
 D:\Learning\AdvanceDB\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Category\Create.g.cshtml.cs
 D:\Learning\AdvanceDB\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Product\Test.g.cshtml.cs
+D:\Learning\AdvanceDB\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Frontend.g.cshtml.cs
+D:\Learning\AdvanceDB\WebApplication1\obj\Debug\netcoreapp2.1\Razor\Views\Employee\List.g.cshtml.cs
